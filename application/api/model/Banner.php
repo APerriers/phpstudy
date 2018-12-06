@@ -9,18 +9,18 @@
 namespace app\api\model;
 
 
+use think\Db;
 use think\Exception;
 
 class Banner
 {
     public static function getBannerById($id)
     {
-//        try {
-//            1/0;
-//        } catch (Exception $exc) {
-//            throw $exc;
-//        }
-        return null;
+
+//        $banner = Db::query('select * from banner');
+        $banner = Db::table('banner_item')->where('banner_id', '=',$id)->find();
+
+        return json($banner);
     }
 
 }
