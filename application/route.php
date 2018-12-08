@@ -11,7 +11,7 @@
 
 use think\Route;
 
-Route::get('banner/:id',"api/v1.Banner/getBanner");
+Route::get(':version/banner/:id',"api/:version.Banner/getBanner");
 
 return [
     '__pattern__' => [
