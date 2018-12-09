@@ -38,6 +38,13 @@ class Category
     {
         $validate = new IDMustBePositiveInt();
         $validate->goCheck();
+        $category = CategoryModel::getCategory($id);
+        if(empty($category)){
+            throw new MissException([
+                'msg' => 'category not found'
+            ]);
+        }
+        return $category;
     }
 
 }
